@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useAtom, useAtomValue } from 'jotai'
+
+import inputAtom from '../atoms/input'
+import outputAtom from '../atoms/output'
 
 function Layout(): React.JSX.Element
-  const [input, setInput] = useState('input')
-  const [output, setOutput] = useState('')
-
-  useEffect
-    => window.alert(input)
-    [input]
+  const [input, setInput] = useAtom(inputAtom)
+  const output = useAtomValue(outputAtom)
 
   <div className="flex gap-x-5 bg-gray-100 w-full h-[80vh] p-4">
     <div className="h-full w-full bg-gray-300">

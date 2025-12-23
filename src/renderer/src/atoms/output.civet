@@ -1,0 +1,9 @@
+import { atom } from 'jotai'
+
+import inputAtom from './input'
+
+const outputAtom = atom (get) =>
+    const input = get(inputAtom)
+    `Augment ${input}.`
+
+export default outputAtom

@@ -1,0 +1,5 @@
+import { atom } from 'jotai'
+
+const inputAtom = atom("Some default input")
+
+export default inputAtom

@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function Versions(): React.JSX.Element
-  const [versions] = useState(window.electron.process.versions)
+function Layout(): React.JSX.Element
+  const [input, setInput] = useState('input')
+  const [output, setOutput] = useState('')
 
-  <ul className="versions">
-    <li className="electron-version"> v{versions.electron}</li>
-    <li className="chrome-version">Chromium v{versions.chrome}</li>
-    <li className="node-version">Node v{versions.node}</li>
-    <li>something else with Civet
+  useEffect
+    => window.alert(input)
+    [input]
 
-export default Versions
+  <div className="flex gap-x-5 bg-gray-100 w-full h-[80vh] p-4">
+    <div className="h-full w-full bg-gray-300">
+      <textarea
+        value={input}
+        onChange={(e: any) => setInput(e.target.value)}
+        className="bg-green-200 w-full h-[100%!important] text-black">
+    <div className="h-full w-full bg-gray-300">
+      <p
+        className="text-black">{output}
+
+export default Layout

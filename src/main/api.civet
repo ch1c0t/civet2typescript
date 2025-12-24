@@ -1,0 +1,11 @@
+import { ipcMain } from 'electron'
+import { compile } from '@danielx/civet'
+
+function defineAPI
+    ipcMain.handle 'CompileCivetSource', async (_event, source) =>
+        try
+            compile(source)
+        catch error
+            error.message
+
+export default defineAPI

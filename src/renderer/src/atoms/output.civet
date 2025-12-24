@@ -2,8 +2,9 @@ import { atom } from 'jotai'
 
 import inputAtom from './input'
 
-const outputAtom = atom (get) =>
-    const input = get(inputAtom)
-    `Augment ${input}.`
+const outputAtom = atom async (get) =>
+    const input: string = get(inputAtom)
+    const output = await window.api.CompileCivetSource(input)
+    output
 
 export default outputAtom

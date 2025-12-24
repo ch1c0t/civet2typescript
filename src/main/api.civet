@@ -1,10 +1,13 @@
 import { ipcMain } from 'electron'
 import { compile } from '@danielx/civet'
+import { format } from 'prettier'
 
 function defineAPI
     ipcMain.handle 'CompileCivetSource', async (_event, source) =>
         try
-            compile(source)
+            const minifiedTypeScript = await compile(source)
+            const formattedTypeScript = await format(minifiedTypeScript, parser: 'typescript', tabWidth: 2)
+            formattedTypeScript
         catch error
             error.message
 

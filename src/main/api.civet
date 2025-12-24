@@ -6,7 +6,10 @@ function defineAPI
     ipcMain.handle 'CompileCivetSource', async (_event, source) =>
         try
             const minifiedTypeScript = await compile(source)
-            const formattedTypeScript = await format(minifiedTypeScript, parser: 'typescript', tabWidth: 2)
+            const formattedTypeScript = await format minifiedTypeScript,
+                parser: 'typescript'
+                tabWidth: 2,
+                useTabs: false
             formattedTypeScript
         catch error
             error.message

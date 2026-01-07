@@ -1,32 +1,16 @@
-import { useEffect } from 'react'
-import { useAtom, useAtomValue } from 'jotai'
+import { useAtomValue } from 'jotai'
 
 import inputAtom from '../atoms/input'
 import outputAtom from '../atoms/output'
+import Input from './Input'
 import CodeHighlighter from './CodeHighlighter.jsx'
 
 function Layout(): React.JSX.Element
-  const [input, setInput] = useAtom(inputAtom)
   const output = useAtomValue(outputAtom)
   
-  const handleCtrlU = (event) =>
-    if ((event.ctrlKey || event.metaKey) && event.key === 'u')
-      event.preventDefault()
-      setInput ''
-    
-  useEffect
-    =>
-      document.addEventListener 'keydown', handleCtrlU
-      =>
-        document.removeEventListener 'keydown', handleCtrlU
-    []
-
   <div className="flex gap-x-5 bg-gray-100 w-full h-[80vh] p-4">
     <div className="h-full w-full bg-gray-300">
-      <textarea #input autoFocus
-        value={input}
-        onChange={(e: any) => setInput(e.target.value)}
-        className="bg-green-200 w-full h-[100%!important] text-black">
+      <Input>
     <div className="h-full w-full bg-gray-800">
       <CodeHighlighter code={output} />
 

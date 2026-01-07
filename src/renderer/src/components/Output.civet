@@ -1,0 +1,8 @@
+import { useAtomValue } from 'jotai'
+import { htmlAtom } from '../atoms/output'
+
+export default function Output {
+  const html = useAtomValue(htmlAtom)
+
+  <div id="output" className="h-full w-full overflow-auto" dangerouslySetInnerHTML={__html: html} />
+}

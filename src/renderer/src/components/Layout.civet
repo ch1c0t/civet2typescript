@@ -1,17 +1,11 @@
-import { useAtomValue } from 'jotai'
-
-import inputAtom from '../atoms/input'
-import outputAtom from '../atoms/output'
 import Input from './Input'
-import CodeHighlighter from './CodeHighlighter.jsx'
+import Output from './Output'
 
 function Layout(): React.JSX.Element
-  const output = useAtomValue(outputAtom)
-  
   <div className="flex gap-x-5 bg-gray-100 w-full h-[80vh] p-4">
     <div className="h-full w-full bg-gray-300">
       <Input>
     <div className="h-full w-full bg-gray-800">
-      <CodeHighlighter code={output} />
+      <Output>
 
 export default Layout

@@ -31,5 +31,15 @@ test('it produces the output', async function() {
   await input.pressSequentially("console.log 'a string'", {
     delay: 100
   });
-  return expect(output).toContainText('console.log("a string");');
+  return expect(output).toContainText("console.log('a string')");
+});
+
+test('it clears the input when Ctrl+u is pressed', async function() {
+  expect(input).toHaveValue("console.log 'a string'");
+  await window.keyboard.press('Control+u');
+  expect(input).toHaveValue('');
+  await input.pressSequentially("console.log console.log", {
+    delay: 100
+  });
+  return expect(output).toContainText('console.log(console.log)');
 });

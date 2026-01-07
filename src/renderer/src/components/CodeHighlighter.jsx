@@ -10,7 +10,6 @@ export default function CodeHighlighter({ code }) {
         lang: 'typescript',
         theme: 'github-dark'
       })
-      console.log(highlighted)
       setHtml(highlighted)
     }
     highlight()

@@ -15,4 +15,13 @@ test "it contains the word 'Electron'", ->
 
 test 'it produces the output', ->
   await input.pressSequentially "console.log 'a string'", delay: 100
-  expect(output).toContainText 'console.log("a string");'
+  expect(output).toContainText "console.log('a string')"
+
+test 'it clears the input when Ctrl+u is pressed', ->
+  expect(input).toHaveValue "console.log 'a string'"
+
+  await window.keyboard.press 'Control+u'
+  expect(input).toHaveValue ''
+
+  await input.pressSequentially "console.log console.log", delay: 100
+  expect(output).toContainText 'console.log(console.log)'

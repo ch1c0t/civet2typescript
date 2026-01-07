@@ -10,7 +10,7 @@ function Layout(): React.JSX.Element
 
   <div className="flex gap-x-5 bg-gray-100 w-full h-[80vh] p-4">
     <div className="h-full w-full bg-gray-300">
-      <textarea
+      <textarea #input autofocus
         value={input}
         onChange={(e: any) => setInput(e.target.value)}
         className="bg-green-200 w-full h-[100%!important] text-black">

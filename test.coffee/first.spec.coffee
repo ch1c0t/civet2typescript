@@ -1,8 +1,18 @@
 import { test, expect } from '@playwright/test'
-import { _electron as e } from 'playwright'
+import { GetApp } from './helpers'
+
+app = window = input = output = null
+test.beforeAll ->
+  app = await GetApp()
+  window = await app.firstWindow()
+  input = await window.locator '#input'
+  output = await window.locator '#output'
+test.afterAll ->
+  await app.close()
 
 test "it contains the word 'Electron'", ->
-  app = await e.launch executablePath: "./dist/civet2typescript-1.0.0.AppImage"
-  window = await app.firstWindow()
-
   expect(window.getByText 'Electron').toBeVisible()
+
+test 'it produces the output', ->
+  await input.pressSequentially "console.log 'a string'", delay: 100
+  expect(output).toContainText 'console.log("a string");'

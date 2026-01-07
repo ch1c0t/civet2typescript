@@ -16,5 +16,5 @@ export default function CodeHighlighter({ code }) {
     highlight()
   }, [code])
 
-  return <div className="h-full w-full overflow-auto" dangerouslySetInnerHTML={{ __html: html }} />
+  return <div id="output" className="h-full w-full overflow-auto" dangerouslySetInnerHTML={{ __html: html }} />
 }

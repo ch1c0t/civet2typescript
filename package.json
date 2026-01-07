@@ -20,7 +20,7 @@
     "build:mac": "electron-vite build && electron-builder --mac",
     "build:linux": "electron-vite build && electron-builder --linux",
     "watch:tests": "coffee -o test/ -cw test.coffee/",
-    "run:tests": "playwright test"
+    "run:tests": "playwright test --workers=1"
   },
   "dependencies": {
     "@danielx/civet": "^0.11.0",

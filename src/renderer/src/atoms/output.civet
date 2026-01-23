@@ -1,0 +1,18 @@
+import { atom } from 'jotai'
+import { codeToHtml } from 'shiki'
+
+import inputAtom from './input'
+
+const codeAtom = atom async (get) =>
+    const input = get(inputAtom)
+    const code = await window.api.CompileCivetSource(input)
+    code
+
+const htmlAtom = atom async (get) =>
+    const code = await get(codeAtom)
+    const html: string = await codeToHtml code,
+        lang: 'typescript'
+        theme: 'github-dark'
+    html
+
+export { codeAtom, htmlAtom }

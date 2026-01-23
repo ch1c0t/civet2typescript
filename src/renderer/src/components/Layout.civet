@@ -1,0 +1,11 @@
+import Input from './Input'
+import Output from './Output'
+
+function Layout(): React.JSX.Element
+  <div className="flex gap-x-5 bg-gray-100 w-full h-[80vh] p-4">
+    <div className="h-full w-full bg-gray-300">
+      <Input>
+    <div className="h-full w-full bg-gray-800">
+      <Output>
+
+export default Layout

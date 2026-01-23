@@ -1,0 +1,7 @@
+import { ipcRenderer } from 'electron'
+
+const api =
+    CompileCivetSource: async (source) =>
+        ipcRenderer.invoke('CompileCivetSource', source)
+        
+export default api

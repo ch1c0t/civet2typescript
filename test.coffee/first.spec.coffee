@@ -25,3 +25,13 @@ test 'it clears the input when Ctrl+u is pressed', ->
 
   await input.pressSequentially "console.log console.log", delay: 100
   expect(output).toContainText 'console.log(console.log)'
+
+test 'it restores the focus when Ctrl+u is pressed', ->
+  await window.keyboard.press 'Tab'
+
+  await window.keyboard.press 'Control+u'
+  expect(input).toHaveValue ''
+
+  await input.pressSequentially "input 'after ctrl+u'", delay: 100
+  expect(input).toHaveValue "input 'after ctrl+u'"
+  expect(output).toContainText "input('after ctrl+u')"

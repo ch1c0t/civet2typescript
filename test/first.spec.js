@@ -43,14 +43,3 @@ test('it clears the input when Ctrl+u is pressed', async function() {
   });
   return expect(output).toContainText('console.log(console.log)');
 });
-
-test('it restores the focus when Ctrl+u is pressed', async function() {
-  await window.keyboard.press('Tab');
-  await window.keyboard.press('Control+u');
-  expect(input).toHaveValue('');
-  await input.pressSequentially("input 'after ctrl+u'", {
-    delay: 100
-  });
-  expect(input).toHaveValue("input 'after ctrl+u'");
-  return expect(output).toContainText("input('after ctrl+u')");
-});

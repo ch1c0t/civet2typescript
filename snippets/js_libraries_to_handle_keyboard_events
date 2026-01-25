@@ -1,0 +1,22 @@
+Mousetrap: A lightweight and popular library for handling keyboard shortcuts in web applications. It has a concise API, no external dependencies, and supports key sequences (e.g., g i to go to the inbox) in addition to combinations.
+Hotkeys.js (formerly jQuery Hotkeys): A robust library for capturing keyboard input and defining handlers for almost any key combination, with a small footprint and no external dependencies.
+KeyboardJS: A comprehensive library designed to manage complex key-bindings without the hassle of dealing with raw key codes or conflicts. It also supports different keyboard locales.
+Tinykeys: A modern, minimal (around 650 B gzipped) library focused on simple keybindings, ideal for use cases where footprint is a priority.
+Kibo: A simple, dependency-free library for defining event handlers on specific elements or the entire window, providing straightforward down() and up() methods. 
+
+https://dmauro.github.io/Keypress/
+https://github.com/dmauro/Keypress/
+
+https://craig.is/killing/mice
+https://github.com/ccampbell/mousetrap
+
+https://wangchujiang.com/hotkeys-js/
+https://github.com/jaywcjlove/hotkeys-js
+
+https://github.com/JohannesKlauss/react-hotkeys-hook
+
+https://jamiebuilds.github.io/tinykeys/
+https://github.com/jamiebuilds/tinykeys
+
+https://github.com/RobertWHurst/KeyboardJS
+https://github.com/RobertWHurst/Keystrokes

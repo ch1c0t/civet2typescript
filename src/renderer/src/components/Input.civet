@@ -1,15 +1,17 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useAtom } from 'jotai'
 
 import inputAtom from '../atoms/input'
 
 function Input(): React.JSX.Element
   const [input, setInput] = useAtom(inputAtom)
+  const textareaRef = useRef(null)
   
   const handleCtrlU = (event) =>
     if ((event.ctrlKey || event.metaKey) && event.key === 'u')
       event.preventDefault()
       setInput ''
+      textareaRef.current.focus()
     
   useEffect
     =>
@@ -22,6 +24,7 @@ function Input(): React.JSX.Element
     setInput(e.target.value)
 
   <textarea #input autoFocus
+    ref={textareaRef}
     value={input}
     onChange={handleChange}
     className="bg-green-200 w-full h-[100%!important] text-black">

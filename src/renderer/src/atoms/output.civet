@@ -1,7 +1,7 @@
 import { atom } from 'jotai'
 import { codeToHtml } from 'shiki'
 
-import inputAtom from './input'
+import { inputAtom } from './input'
 
 const codeAtom = atom async (get) =>
     const input = get(inputAtom)

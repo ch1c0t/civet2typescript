@@ -1,0 +1,10 @@
+import store from './store'
+import { inputAtom } from './atoms/input'
+
+document.addEventListener 'keydown', (event) =>
+    switch event.ctrlKey
+        true
+            switch event.key
+                'u'
+                    event.preventDefault()
+                    store.set inputAtom, => ""
